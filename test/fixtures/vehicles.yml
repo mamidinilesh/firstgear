@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  brand_id: 1
+  model: MyString
+  variant: MyString
+  transmission: MyString
+  active: false
+
+two:
+  type: 
+  brand_id: 1
+  model: MyString
+  variant: MyString
+  transmission: MyString
+  active: false
