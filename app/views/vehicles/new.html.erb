@@ -1,3 +1,5 @@
-<h1>Vehicles#new</h1>
-<p>Find me in app/views/vehicles/new.html.erb</p>
+<h1 class="center">New Vehicle</h1>
 <%= render 'form', vehicle: @vehicle %>
+<div>
+  <%= link_to 'All Vehicles', vehicles_path%>
+</div>

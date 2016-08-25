@@ -10,4 +10,9 @@
   <label class = "control-label col-sm-2" >Active:</label>
   <p class = "control-label col-sm-1" ><%= @brand.active %></p>
 </div>
+<div>
+  <%= link_to 'Edit', edit_brand_path(@brand) %> |
+  <%= link_to 'New Brand', new_brand_path%> |
+  <%= link_to 'All Brands', brands_path%>
+</div>
 </div>

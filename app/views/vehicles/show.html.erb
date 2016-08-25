@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+
+<div class="form-horizontal">
 <p>
   <strong>Vehicle Type : </strong>
   <%= @vehicle.v_type %>
@@ -25,3 +27,10 @@
   <strong>Active:</strong>
   <%= @vehicle.active %>
 </p>
+</div>
+
+<div>
+  <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+  <%= link_to 'New Vehicle', new_vehicle_path%> |
+  <%= link_to 'All vehicles', vehicles_path%>
+</div>
