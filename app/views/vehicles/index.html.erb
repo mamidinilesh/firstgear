@@ -1,17 +1,26 @@
-<h1>Vehicle</h1>
+<h1 class="center">Vehicle</h1>
 
 
-<table>
+<div style="height: 500px; overflow: auto" >
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <td>Vehile name</td>
+      <th>Vehicle id</th>
+      <th>Vehicle type</th>
+      <th>Vehicle brand</th>
+      <th>Vehicle model</th>
+      <th>Vehicle variant</th>
+      <th>Vehicle transmission</th>
+      <th>Vehicle active</th>
+        <th colspan="2"></th>
     </tr>
   </thead>
   <tbody>
     <% @vehicles.each do |vehicle|%>
     <tr>
-      <td> <%=vehicle.v_type %></td>
+      <td> <%=vehicle.id %></td>
       <td> <%= @brands.find(vehicle.brand_id).name %></td>
+      <td> <%=vehicle.v_type %></td>
       <td> <%=vehicle.model %></td>
       <td> <%=vehicle.variant %></td>
       <td> <%=vehicle.transmission %></td>
@@ -25,5 +34,6 @@
   </tbody>
 
 </table>
+</div>
 
 <%= link_to 'New Vehicle', new_vehicle_path, class: "btn btn-md btn-primary"%>

@@ -1,0 +1,31 @@
+<h1 class="center">Regions</h1>
+
+
+<div style="height: 500px; overflow: auto" >
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Region id</th>
+      <th>Region name</th>
+      <th>City</th>
+      <th>active</th>
+        <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @regions.each do |region|%>
+    <tr>
+      <td> <%=region.id %></td>
+      <td> <%=region.name %></td>
+      <td> <%= @cities.find(region.city_id).name %></td>
+      <td> <%=region.active %></td>
+        <td><%= link_to 'Edit', edit_region_path(region) %></td>
+      </tr>
+      <% end %>
+
+  </tbody>
+
+</table>
+</div>
+
+<%= link_to 'New Region', new_region_path, class: "btn btn-md btn-primary"%>

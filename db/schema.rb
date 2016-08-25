@@ -10,11 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822112612) do
+ActiveRecord::Schema.define(version: 20160825082307) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
     t.string   "logo"
+    t.boolean  "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "state_id"
+    t.boolean  "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["state_id"], name: "index_cities_on_state_id"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "city_id"
+    t.boolean  "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_regions_on_city_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string   "region"
+    t.string   "name"
+    t.integer  "category_id"
+    t.integer  "default_commission"
+    t.boolean  "active"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["category_id"], name: "index_services_on_category_id"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string   "name"
     t.boolean  "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

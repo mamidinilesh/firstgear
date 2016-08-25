@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class="form-horizontal">
+<p>
+  <strong>City Name : </strong>
+  <%= @city.name %>
+</p>
+<p>
+  <strong>State : </strong>
+  <%= @states.find(@city.state_id).name %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @city.active %>
+</p>
+</div>
+
+<div>
+  <%= link_to 'Edit', edit_city_path(@city) %> |
+  <%= link_to 'New City', new_city_path%> |
+  <%= link_to 'All Cities', cities_path%>
+</div>

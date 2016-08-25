@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  region: MyString
+  name: MyString
+  category: one
+  default_commission: 1
+  active: false
+
+two:
+  region: MyString
+  name: MyString
+  category: two
+  default_commission: 1
+  active: false

@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class="form-horizontal">
+<p>
+  <strong>Service Name : </strong>
+  <%= @service.name %>
+</p>
+<p>
+  <strong>Category : </strong>
+  <%= @categories.find(@service.category_id).name %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @service.active %>
+</p>
+</div>
+
+<div>
+  <%= link_to 'Edit', edit_service_path(@service) %> |
+  <%= link_to 'New Service', new_service_path%> |
+  <%= link_to 'All Services', services_path%>
+</div>

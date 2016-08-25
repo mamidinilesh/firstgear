@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class="form-horizontal">
+<p>
+  <strong>Region Name : </strong>
+  <%= @region.name %>
+</p>
+<p>
+  <strong>City : </strong>
+  <%= @cities.find(@region.city_id).name %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @region.active %>
+</p>
+</div>
+
+<div>
+  <%= link_to 'Edit', edit_region_path(@region) %> |
+  <%= link_to 'New Region', new_region_path%> |
+  <%= link_to 'All Region', regions_path%>
+</div>
