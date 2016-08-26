@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vendor: one
+  start_date: 2016-08-26
+  end_date: 2016-08-26
+  contract_type: one
+  comments: MyString
+  listing_fees: 9.99
+  listing_fees_paid: 9.99
+  active: false
+
+two:
+  vendor: two
+  start_date: 2016-08-26
+  end_date: 2016-08-26
+  contract_type: two
+  comments: MyString
+  listing_fees: 9.99
+  listing_fees_paid: 9.99
+  active: false

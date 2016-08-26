@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle: one
+  service: one
+  vendor: one
+  commission: 9.99
+  is_inclusive: false
+  active: false
+
+two:
+  vehicle: two
+  service: two
+  vendor: two
+  commission: 9.99
+  is_inclusive: false
+  active: false

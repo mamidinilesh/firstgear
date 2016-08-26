@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address1: MyString
+  address2: MyString
+  street: MyString
+  region: one
+  city: one
+  state: one
+  lat: 9.99
+  lng: 9.99
+  ranking: 9.99
+  vendor_type: one
+  contact_name_1: MyString
+  contact_email_1: MyString
+  contact_mob_1: MyString
+  contact_name_2: MyString
+  contact_email_2: MyString
+  contact_mob_2: MyString
+  listing_category: false
+  active: false
+
+two:
+  name: MyString
+  address1: MyString
+  address2: MyString
+  street: MyString
+  region: two
+  city: two
+  state: two
+  lat: 9.99
+  lng: 9.99
+  ranking: 9.99
+  vendor_type: two
+  contact_name_1: MyString
+  contact_email_1: MyString
+  contact_mob_1: MyString
+  contact_name_2: MyString
+  contact_email_2: MyString
+  contact_mob_2: MyString
+  listing_category: false
+  active: false

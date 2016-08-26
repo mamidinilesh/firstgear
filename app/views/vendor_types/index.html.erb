@@ -1,0 +1,25 @@
+<h1 class="center">Vendor Types</h1>
+<div style="height: 500px; overflow: auto" >
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Type id</th>
+      <th>Vendor Type</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vendor_types.each do |vendor_type|%>
+    <tr>
+      <td> <%=vendor_type.id %></td>
+      <td> <%=vendor_type.vendor_type %></td>
+        <td><%= link_to 'Edit', edit_vendor_type_path(vendor_type) %></td>
+        <td><%= link_to 'Show', vendor_type %></td>
+
+      </tr>
+      <% end %>
+
+  </tbody>
+</table>
+</div>
+<%= link_to 'New Vendor Type', new_vendor_type_path, class: "btn btn-md btn-primary"%>

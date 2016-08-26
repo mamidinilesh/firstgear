@@ -6,6 +6,76 @@ Rails.application.routes.draw do
 
 
 
+  # get 'vendor_contracts/_form'
+  #
+  # get 'vendor_contracts/edit'
+  #
+  # get 'vendor_contracts/index'
+  #
+  # get 'vendor_contracts/new'
+  #
+  # get 'vendor_contracts/show'
+  #
+  # get 'vendors/_form'
+  #
+  # get 'vendors/edit'
+  #
+  # get 'vendors/index'
+  #
+  # get 'vendors/new'
+  #
+  # get 'vendors/show'
+  #
+  # get 'vendor_types/_form'
+  #
+  # get 'vendor_types/edit'
+  #
+  # get 'vendor_types/index'
+  #
+  # get 'vendor_types/new'
+  #
+  # get 'vendor_types/show'
+  #
+  # get 'rate_cards/_form'
+  #
+  # get 'rate_cards/edit'
+  #
+  # get 'rate_cards/index'
+  #
+  # get 'rate_cards/new'
+  #
+  # get 'rate_cards/show'
+  #
+  # get 'vendor_type/_form'
+  #
+  # get 'vendor_type/edit'
+  #
+  # get 'vendor_type/index'
+  #
+  # get 'vendor_type/new'
+  #
+  # get 'vendor_type/show'
+  #
+  # get 'vendor_contract/_form'
+  #
+  # get 'vendor_contract/edit'
+  #
+  # get 'vendor_contract/index'
+  #
+  # get 'vendor_contract/new'
+  #
+  # get 'vendor_contract/show'
+  #
+  # get 'vendor/_form'
+  #
+  # get 'vendor/edit'
+  #
+  # get 'vendor/index'
+  #
+  # get 'vendor/new'
+  #
+  # get 'vendor/show'
+
   # get 'service/region'
   #
   # get 'service/name:string'
@@ -73,6 +143,10 @@ resources :vehicles
  resources :states
  resources :cities
  resources :regions
+ resources :vendors
+ resources :vendor_contracts
+ resources :vendor_types
+ resources :rate_cards
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
