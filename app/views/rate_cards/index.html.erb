@@ -21,7 +21,7 @@
       <td> <%= @vendors.find(rate_card.vendor_id).name %></td>
       <td> <%= @vehicles.find(rate_card.vehicle_id).model %></td>
       <td> <%= @services.find(rate_card.service_id).name %></td>
-      <td> <%=rate_card.commission %></td>
+      <td> <%=rate_card.rate %></td>
       <td> <%=rate_card.active %></td>
         <td><%= link_to 'Edit', edit_rate_card_path(rate_card) %></td>
           <td><%= link_to 'Show', rate_card %></td>

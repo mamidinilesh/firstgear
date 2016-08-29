@@ -51,7 +51,7 @@ class RateCardsController < ApplicationController
 
     private
     def rate_card_params
-      params.require(:rate_card).permit(:vendor_id, :vehicle_id , :service_id, :commission , :active)
+      params.require(:rate_card).permit(:vendor_id, :vehicle_id , :service_id, :rate , :active)
     end
 
     def set_rate_card
