@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 20160826144130) do
     t.string   "contact_name_2"
     t.string   "contact_email_2"
     t.string   "contact_mob_2"
-    t.string   "listing_category"
+    t.boolean  "listing_category"
     t.boolean  "active"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
