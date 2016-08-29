@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829123124) do
+ActiveRecord::Schema.define(version: 20160829130327) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20160829123124) do
     t.integer  "vehicle_id"
     t.integer  "service_id"
     t.integer  "vendor_id"
-    t.decimal  "rate"
+    t.decimal  "commission"
     t.boolean  "is_inclusive"
     t.boolean  "active"
     t.datetime "created_at",   null: false
