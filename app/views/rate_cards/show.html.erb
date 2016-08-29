@@ -1,2 +1,36 @@
-<h1>RateCards#show</h1>
-<p>Find me in app/views/rate_cards/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<div class="form-horizontal">
+<p>
+  <strong>Rate Card Id : </strong>
+  <%= @rate_card.id %>
+</p>
+<p>
+  <strong>Vendor : </strong>
+  <%= @vendors.find(@rate_card.vendor_id).name %>
+</p>
+<p>
+  <strong>Vehicle : </strong>
+  <%= @vehicles.find(@rate_card.vehicle_id).model %>
+</p>
+<p>
+  <strong>Service : </strong>
+  <%= @services.find(@rate_card.service_id).name %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @rate_card.commission %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @rate_card.active %>
+</p>
+</div>
+
+<div>
+  <%= link_to 'Edit', edit_rate_card_path(@rate_card) %> |
+  <%= link_to 'New Rate Card', new_rate_card_path%> |
+  <%= link_to 'All Rate Cards', rate_cards_path%>
+</div>

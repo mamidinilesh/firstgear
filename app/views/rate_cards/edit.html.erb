@@ -1,2 +1,8 @@
-<h1>RateCards#edit</h1>
-<p>Find me in app/views/rate_cards/edit.html.erb</p>
+<h1 class="center">Update Rate Card </h1>
+
+<%= render 'form', rate_card: @rate_card%>
+
+<div>
+  <%= link_to 'New Rate Card', new_rate_card_path%> |
+  <%= link_to 'All Rate Cards', rate_cards_path%>
+</div>

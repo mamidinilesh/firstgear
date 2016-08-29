@@ -1,2 +1,36 @@
-<h1>RateCards#index</h1>
-<p>Find me in app/views/rate_cards/index.html.erb</p>
+<h1 class="center">Rate Card</h1>
+
+
+<div style="height: 500px; overflow: auto" >
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Rate Card id</th>
+      <th>Vendor</th>
+      <th>Vehicle</th>
+      <th>Service</th>
+      <th>rate</th>
+      <th>active</th>
+        <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rate_cards.each do |rate_card|%>
+    <tr>
+      <td> <%=rate_card.id %></td>
+      <td> <%= @vendors.find(rate_card.vendor_id).name %></td>
+      <td> <%= @vehicles.find(rate_card.vehicle_id).model %></td>
+      <td> <%= @services.find(rate_card.service_id).name %></td>
+      <td> <%=rate_card.commission %></td>
+      <td> <%=rate_card.active %></td>
+        <td><%= link_to 'Edit', edit_rate_card_path(rate_card) %></td>
+          <td><%= link_to 'Show', rate_card %></td>
+      </tr>
+      <% end %>
+
+  </tbody>
+
+</table>
+</div>
+
+<%= link_to 'New Rate Card', new_rate_card_path, class: "btn btn-md btn-primary"%>
