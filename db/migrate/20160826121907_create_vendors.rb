@@ -18,7 +18,7 @@ class CreateVendors < ActiveRecord::Migration[5.0]
       t.string :contact_name_2
       t.string :contact_email_2
       t.string :contact_mob_2
-      t.string :listing_category
+      t.boolean :listing_category
       t.boolean :active
 
       t.timestamps
