@@ -93,14 +93,12 @@ ActiveRecord::Schema.define(version: 20160826144130) do
     t.integer  "vendor_id"
     t.date     "start_date"
     t.date     "end_date"
-    t.integer  "contract_type_id"
     t.string   "comments"
     t.decimal  "listing_fees"
     t.decimal  "listing_fees_paid"
     t.boolean  "active"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.index ["contract_type_id"], name: "index_vendor_contracts_on_contract_type_id"
     t.index ["vendor_id"], name: "index_vendor_contracts_on_vendor_id"
   end
 

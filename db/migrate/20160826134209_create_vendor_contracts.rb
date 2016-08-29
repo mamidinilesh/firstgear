@@ -4,7 +4,6 @@ class CreateVendorContracts < ActiveRecord::Migration[5.0]
       t.references :vendor, foreign_key: true
       t.date :start_date
       t.date :end_date
-      t.references :contract_type, foreign_key: true
       t.string :comments
       t.decimal :listing_fees
       t.decimal :listing_fees_paid
