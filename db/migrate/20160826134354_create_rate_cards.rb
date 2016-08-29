@@ -4,7 +4,7 @@ class CreateRateCards < ActiveRecord::Migration[5.0]
       t.references :vehicle, foreign_key: true
       t.references :service, foreign_key: true
       t.references :vendor, foreign_key: true
-      t.decimal :commission
+      t.decimal :rate
       t.boolean :is_inclusive
       t.boolean :active
 

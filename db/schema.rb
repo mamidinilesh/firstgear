@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829130327) do
+ActiveRecord::Schema.define(version: 20160829133324) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20160829130327) do
     t.integer  "vehicle_id"
     t.integer  "service_id"
     t.integer  "vendor_id"
-    t.decimal  "commission"
+    t.decimal  "rate"
     t.boolean  "is_inclusive"
     t.boolean  "active"
     t.datetime "created_at",   null: false
@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(version: 20160829130327) do
     t.string   "contact_name_2"
     t.string   "contact_email_2"
     t.string   "contact_mob_2"
-    t.         "listing_category"
+    t.string   "listing_category"
     t.boolean  "active"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
