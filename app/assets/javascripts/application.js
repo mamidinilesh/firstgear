@@ -18,7 +18,7 @@
 //= require bootstrap-datepicker
 <script type="text/javascript">
 $(document).ready(function(){
-    $("#frompicker").datepicker();
-    $("#topicker").datepicker();
+  $(".datepicker").datepicker();
+  
 });
 </script>

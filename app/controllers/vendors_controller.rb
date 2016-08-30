@@ -1,24 +1,16 @@
 class VendorsController < ApplicationController
   def new
     @vendor = Vendor.new
-    @regions = Region.all
-    @vendor_types= VendorType.all
-    @cities = City.all
-    @states= State.all
+    @regions = Region.all.map{ |region| [ region.name, region.id ] }
+    @vendor_types= VendorType.all.map{ |vendor_type| [ vendor_type.vendor_type, vendor_type.id ] }
+    @cities = City.all.map{ |city| [ city.name, city.id ] }
+    @states= State.all.map{ |state| [ state.name, state.id ] }
   end
   def show
     @vendor = Vendor.find(params[:id])
-    @regions = Region.all
-    @vendor_types= VendorType.all
-    @cities = City.all
-    @states= State.all
   end
   def create
     @vendor= Vendor.new(vendor_params)
-    @state = State.find_by(id: vendor_params[:state_id])
-    @city = City.find_by(id: vendor_params[:city_id])
-    @region = Region.find_by(id: vendor_params[:region_id])
-    @vendor_type = VendorType.find_by(id: vendor_params[:vehicle_type_id])
 
     respond_to do |format|
       if @vendor.save
@@ -44,17 +36,14 @@ class VendorsController < ApplicationController
   end
   def edit
       @vendor = Vendor.find(params[:id])
-      @regions = Region.all
-      @vendor_types= VendorType.all
-      @cities = City.all
-      @states= State.all
+      @regions = Region.all.map{ |region| [ region.name, region.id ] }
+      @vendor_types= VendorType.all.map{ |vendor_type| [ vendor_type.vendor_type, vendor_type.id ] }
+      @cities = City.all.map{ |city| [ city.name, city.id ] }
+      @states= State.all.map{ |state| [ state.name, state.id ] }
   end
   def index
     @vendors = Vendor.all
-    @regions = Region.all
-    @vendor_types= VendorType.all
-    @cities = City.all
-    @states= State.all
+
   end
 
   private

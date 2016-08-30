@@ -5,33 +5,28 @@ class VenderServiceMapsController < ApplicationController
   # GET /vender_service_maps.json
   def index
     @vender_service_maps = VenderServiceMap.all
-    @services=Service.all
-    @vehicles=Vehicle.all
-    @vendors=Vendor.all
   end
 
   # GET /vender_service_maps/1
   # GET /vender_service_maps/1.json
   def show
-
-    @services=Service.all
-    @vehicles=Vehicle.all
-    @vendors=Vendor.all
+@vender_service_maps= VenderServiceMap.find(params[:id])
   end
 
   # GET /vender_service_maps/new
   def new
     @vender_service_map = VenderServiceMap.new
-    @services=Service.all
-    @vehicles=Vehicle.all
-    @vendors=Vendor.all
+    @vendors = Vendor.all.map{ |vendor| [ vendor.name, vendor.id ] }
+    @vehicles = Vehicle.all.map{ |vehicle| [ vehicle.model, vehicle.id ] }
+    @services = Service.all.map{ |service| [ service.name, service.id ] }
   end
 
   # GET /vender_service_maps/1/edit
   def edit
-    @services=Service.all
-    @vehicles=Vehicle.all
-    @vendors=Vendor.all
+    @vender_service_maps= VenderServiceMap.find(params[:id])
+    @vendors = Vendor.all.map{ |vendor| [ vendor.name, vendor.id ] }
+    @vehicles = Vehicle.all.map{ |vehicle| [ vehicle.model, vehicle.id ] }
+    @services = Service.all.map{ |service| [ service.name, service.id ] }
   end
 
   # POST /vender_service_maps

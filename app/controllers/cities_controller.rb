@@ -1,11 +1,12 @@
 class CitiesController < ApplicationController
   def new
     @city = City.new
-    @states = State.all
+     @states = State.all.map{ |state| [ state.name, state.id ] }
+
   end
   def show
     @city= City.find(params[:id])
-      @states = State.all
+
   end
   def create
     @city= City.new(city_params)
@@ -37,11 +38,11 @@ class CitiesController < ApplicationController
   end
   def edit
       @city= City.find(params[:id])
-        @states = State.all
+      @states = State.all.map{ |state| [ state.name, state.id ] }
   end
   def index
     @cities= City.all
-      @states = State.all
+
   end
 
   private

@@ -1,17 +1,13 @@
 class VendorContractsController < ApplicationController
   def new
     @vendor_contract = VendorContract.new
-    @vendors = Vendor.all
-    @categories=Category.all
+    @vendors = Vendor.all.map{ |vendor| [ vendor.name, vendor.id ] }
   end
   def show
     @vendor_contract= VendorContract.find(params[:id])
-      @vendors = Vendor.all
-      @categories=Category.all
   end
   def create
     @vendor_contract = VendorContract.new(vendor_contract_params)
-    @vendors = Vendor.all
     respond_to do |format|
       if @vendor_contract.save
         format.html { redirect_to @vendor_contract, vehicle: 'vendor_contract was successfully created.' }
@@ -36,13 +32,11 @@ class VendorContractsController < ApplicationController
   end
   def edit
       @vendor_contract= VendorContract.find(params[:id])
-        @vendors = Vendor.all
-        @categories=Category.all
+        @vendors = Vendor.all.map{ |vendor| [ vendor.name, vendor.id ] }
+
   end
   def index
     @vendor_contracts=VendorContract.all
-      @vendors= Vendor.all
-      @categories=Category.all
   end
 
 private

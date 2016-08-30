@@ -1,7 +1,7 @@
 class RegionsController < ApplicationController
   def new
     @region = Region.new
-    @cities = City.all
+    @cities = City.all.map{ |city| [ city.name, city.id ] }
   end
   def show
     @region= Region.find(params[:id])
@@ -37,7 +37,7 @@ class RegionsController < ApplicationController
   end
   def edit
       @region= Region.find(params[:id])
-        @cities = City.all
+        @cities = City.all.map{ |city| [ city.name, city.id ] }
   end
   def index
     @regions= Region.all

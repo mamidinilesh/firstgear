@@ -5,29 +5,30 @@ class VendeContrctMapsController < ApplicationController
   # GET /vende_contrct_maps.json
   def index
     @vende_contrct_maps = VendeContrctMap.all
-    @vendor_contracts=VendorContract.all
-    @categories=Category.all
+
   end
 
   # GET /vende_contrct_maps/1
   # GET /vende_contrct_maps/1.json
   def show
-    @vendor_contracts=VendorContract.all
-      @categories=Category.all
+    @vendor_contracts=VendorContract.find(params[:id])
   end
 
   # GET /vende_contrct_maps/new
   def new
     @vende_contrct_map = VendeContrctMap.new
-    @vendor_contracts=VendorContract.all
-      @categories=Category.all
+    @vendor_contracts=VendorContract.all.map{ |vendor_contract| [ vendor_contract.id, vendor_contract.id ] }
+      @categories=Category.all.map{ |category| [ category.name, category.id ] }
   end
 
   # GET /vende_contrct_maps/1/edit
   def edit
-    @vendor_contracts=VendorContract.all
-      @categories=Category.all
+    @vendor_contracts=VendorContract.find(params[:id])
+    @vendor_contracts=VendorContract.all.map{ |vendor_contract| [ vendor_contract.id, vendor_contract.id ] }
+      @categories=Category.all.map{ |category| [ category.name, category.id ] }
   end
+
+  
 
   # POST /vende_contrct_maps
   # POST /vende_contrct_maps.json

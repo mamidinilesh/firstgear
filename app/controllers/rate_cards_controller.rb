@@ -1,15 +1,12 @@
 class RateCardsController < ApplicationController
     def new
       @rate_card = RateCard.new
-      @vendors = Vendor.all
-      @vehicles = Vehicle.all
-      @services = Service.all
+      @vendors = Vendor.all.map{ |vendor| [ vendor.name, vendor.id ] }
+      @vehicles = Vehicle.all.map{ |vehicle| [ vehicle.model, vehicle.id ] }
+      @services = Service.all.map{ |service| [ service.name, service.id ] }
     end
     def show
       @rate_card= RateCard.find(params[:id])
-      @vendors = Vendor.all
-      @vehicles = Vehicle.all
-      @services = Service.all
     end
     def create
       @rate_card= RateCard.new(rate_card_params)
@@ -38,15 +35,12 @@ class RateCardsController < ApplicationController
     end
     def edit
         @rate_card= RateCard.find(params[:id])
-        @vendors = Vendor.all
-        @vehicles = Vehicle.all
-        @services = Service.all
+        @vendors = Vendor.all.map{ |vendor| [ vendor.name, vendor.id ] }
+        @vehicles = Vehicle.all.map{ |vehicle| [ vehicle.model, vehicle.id ] }
+        @services = Service.all.map{ |service| [ service.name, service.id ] }
     end
     def index
       @rate_cards= RateCard.all
-      @vendors = Vendor.all
-      @vehicles = Vehicle.all
-      @services = Service.all
     end
 
     private

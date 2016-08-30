@@ -17,9 +17,10 @@
     <tr>
       <td> <%=city.id %></td>
       <td> <%=city.name %></td>
-      <td> <%= @states.find(city.state_id).name %></td>
+      <td> <%= city.state.name %></td>
       <td> <%=city.active %></td>
         <td><%= link_to 'Edit', edit_city_path(city) %></td>
+          <td><%= link_to 'Show',city %></td>
       </tr>
       <% end %>
 

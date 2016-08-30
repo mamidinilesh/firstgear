@@ -20,7 +20,7 @@
     <% @vendor_contracts.each do |vendor_contract|%>
     <tr>
       <td> <%=vendor_contract.id %></td>
-      <td> <%= @vendors.find(vendor_contract.vendor_id).name %></td>
+      <td> <%= vendor_contract.vendor.name %></td>
       <td> <%=vendor_contract.start_date %></td>
       <td> <%=vendor_contract.end_date %></td>
       <td> <%=vendor_contract.comments %></td>

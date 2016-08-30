@@ -7,15 +7,15 @@
 </p>
 <p>
   <strong>Vendor : </strong>
-  <%= @vendors.find(@rate_card.vendor_id).name %>
+  <%= @rate_card.vendor.name %>
 </p>
 <p>
   <strong>Vehicle : </strong>
-  <%= @vehicles.find(@rate_card.vehicle_id).model %>
+  <%= @rate_card.vehicle.model %>
 </p>
 <p>
   <strong>Service : </strong>
-  <%= @services.find(@rate_card.service_id).name %>
+  <%= @rate_card.service.name %>
 </p>
 
 <p>

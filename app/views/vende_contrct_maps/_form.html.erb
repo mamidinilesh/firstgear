@@ -15,11 +15,7 @@
   <div class="field">
     <%= f.label :vendor_contract_id ,class: "control-label col-sm-2" %>
     <div class="col-sm-10">
-      <select name="vende_contrct_map[vendor_contract_id]">
-        <%= @vendor_contracts.each do |vendor_contract| %>
-        <option value="<%= vendor_contract.id %>"><%= vendor_contract.id %></option>
-        <% end %>
-      </select>
+       <%= f.select(:vendor_contract_id, @vendor_contracts) %>
 
   </div>
     </div>
@@ -28,11 +24,7 @@
   <div class="field">
     <%= f.label :category_id ,class: "control-label col-sm-2" %>
     <div class="col-sm-10">
-      <select name="vende_contrct_map[category_id]">
-        <%= @categories.each do |category| %>
-        <option value="<%= category.id %>"><%= category.name %></option>
-        <% end %>
-      </select>
+       <%= f.select(:category_id, @categories) %>
 
   </div>
 </div>

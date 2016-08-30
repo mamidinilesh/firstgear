@@ -27,11 +27,11 @@
       <td> <%=vendor.name %></td>
       <td> <%=vendor.address1 %></td>
       <td> <%=vendor.address2 %></td>
-      <td> <%= @regions.find(vendor.region_id).name %></td>
-      <td> <%= @cities.find(vendor.city_id).name %></td>
-      <td> <%= @states.find(vendor.state_id).name %></td>
+      <td> <%= vendor.region.name %></td>
+      <td> <%= vendor.city.name %></td>
+      <td> <%= vendor.state.name %></td>
       <td> <%=vendor.ranking %></td>
-      <td> <%= @vendor_types.find(vendor.vendor_type_id).vendor_type %></td>
+      <td> <%= vendor.vendor_type.vendor_type %></td>
       <td> <%=vendor.contact_name_1 %></td>
       <td> <%=vendor.contact_mob_1 %></td>
       <td> <%=vendor.contact_email_1 %></td>

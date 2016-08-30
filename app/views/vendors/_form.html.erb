@@ -41,11 +41,7 @@
     <div class="field">
       <%= f.label "State" ,class: "control-label col-sm-2" %>
       <div class="col-sm-10">
-        <select name="vendor[state_id]">
-          <%= @states.each do |state| %>
-          <option value="<%= state.id %>"><%= state.name %></option>
-          <% end %>
-        </select>
+         <%= f.select(:state_id, @states) %>
       </div>
     </div>
   </div>
@@ -53,11 +49,7 @@
     <div class="field">
       <%= f.label "City" ,class: "control-label col-sm-2" %>
       <div class="col-sm-10">
-        <select name="vendor[city_id]">
-          <%= @cities.each do |city| %>
-          <option value="<%= city.id %>"><%= city.name %></option>
-          <% end %>
-        </select>
+ <%= f.select(:city_id, @cities) %>
       </div>
     </div>
   </div>
@@ -65,11 +57,7 @@
     <div class="field">
       <%= f.label "Region" ,class: "control-label col-sm-2" %>
       <div class="col-sm-10">
-        <select name="vendor[region_id]">
-          <%= @regions.each do |region| %>
-          <option value="<%= region.id %>"><%= region.name %></option>
-          <% end %>
-        </select>
+       <%= f.select(:region_id, @regions) %>
       </div>
     </div>
   </div>
@@ -101,11 +89,8 @@
     <div class="field">
       <%= f.label "Vendor Type" ,class: "control-label col-sm-2" %>
       <div class="col-sm-10">
-        <select name="vendor[vendor_type_id]">
-          <%= @vendor_types.each do |vendor_type| %>
-          <option value="<%= vendor_type.id %>"><%= vendor_type.vendor_type %></option>
-          <% end %>
-        </select>
+
+         <%= f.select(:vendor_type_id, @vendor_types) %>
       </div>
     </div>
 

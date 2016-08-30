@@ -24,12 +24,7 @@
     <div class="field">
       <%= f.label "State" ,class: "control-label col-sm-2" %>
       <div class="col-sm-10">
-        <select name="city[state_id]">
-          <%= @states.each do |state| %>
-          <option value="<%= state.id %>"><%= state.name %></option>
-          <% end %>
-        </select>
-
+         <%= f.select(:state_id, @states) %>
       </div>
     </div>
   </div>
