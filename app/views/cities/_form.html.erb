@@ -15,7 +15,7 @@
     <div class="field">
       <%= f.label "City Name" ,class: "control-label col-sm-2" %>
       <div class="col-sm-10">
-        <%= f.text_field :name %>
+        <%= f.text_field :name , :required => true %>
       </div>
     </div>
   </div>
@@ -29,6 +29,7 @@
           <option value="<%= state.id %>"><%= state.name %></option>
           <% end %>
         </select>
+
       </div>
     </div>
   </div>

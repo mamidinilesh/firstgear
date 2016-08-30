@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
+//= require bootstrap-datepicker
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#frompicker").datepicker();
+    $("#topicker").datepicker();
+});
+</script>

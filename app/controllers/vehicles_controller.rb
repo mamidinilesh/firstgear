@@ -5,7 +5,7 @@
     end
     def show
       @vehicle= Vehicle.find(params[:id])
-        @brands = Brand.all
+      
     end
     def create
       @vehicle=Vehicle.new(vehicle_params)

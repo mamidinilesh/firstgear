@@ -1,2 +1,36 @@
-<h1>VendorContracts#show</h1>
-<p>Find me in app/views/vendor_contracts/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vendor Name:</strong>
+  <%= @vendor_contract.vendor.name %>
+</p>
+
+
+<p>
+  <strong>Start Date:</strong>
+  <%= @vendor_contract.start_date %>
+</p>
+<p>
+  <strong>End Date:</strong>
+  <%= @vendor_contract.end_date %>
+</p>
+<p>
+  <strong>Comment:</strong>
+  <%= @vendor_contract.comments %>
+</p>
+<p>
+  <strong>Listing Fee:</strong>
+  <%= @vendor_contract.listing_fees %>
+</p>
+<p>
+  <strong>Amount Paid:</strong>
+  <%= @vendor_contract.listing_fees_paid %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @vendor_contract.active %>
+</p>
+
+<%= link_to 'Edit', edit_vendor_contract_path(@vendor_contract) %> |
+<%= link_to 'Back', vendor_contracts_path %>
