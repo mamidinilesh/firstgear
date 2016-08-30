@@ -1,0 +1,73 @@
+<%= form_for(vende_contrct_map) do |f| %>
+  <% if vende_contrct_map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vende_contrct_map.errors.count, "error") %> prohibited this vende_contrct_map from being saved:</h2>
+
+      <ul>
+      <% vende_contrct_map.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-horizontal">
+  <div class="form-group">
+  <div class="field">
+    <%= f.label :vendor_contract_id ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <select name="vende_contrct_map[vendor_contract_id]">
+        <%= @vendor_contracts.each do |vendor_contract| %>
+        <option value="<%= vendor_contract.id %>"><%= vendor_contract.id %></option>
+        <% end %>
+      </select>
+
+  </div>
+    </div>
+      </div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :category_id ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <select name="vende_contrct_map[category_id]">
+        <%= @categories.each do |category| %>
+        <option value="<%= category.id %>"><%= category.name %></option>
+        <% end %>
+      </select>
+  
+  </div>
+</div>
+  </div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :commission ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+    <%= f.text_field :commission %>
+  </div>
+</div>
+  </div>
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label :is_inclusive ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+    <%= f.check_box :is_inclusive %>
+  </div>
+</div>
+  </div>
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label :active ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+    <%= f.check_box :active %>
+  </div>
+</div>
+  </div>
+
+<div class="form-group">
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>
+</div>

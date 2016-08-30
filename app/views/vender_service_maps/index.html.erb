@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vender Service Maps</h1>
+
+<div style="height: 500px; overflow: auto" >
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Vendor</th>
+      <th>Service</th>
+      <th>Vehicle</th>
+      <th>Commission</th>
+      <th>Is inclusive</th>
+      <th>Active</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vender_service_maps.each do |vender_service_map| %>
+      <tr>
+
+        <td><%= vender_service_map.vendor.name %></td>
+        <td><%= vender_service_map.service.name %></td>
+        <td><%= vender_service_map.vehicle.model %></td>
+        <td><%= vender_service_map.commission %></td>
+        <td><%= vender_service_map.is_inclusive %></td>
+        <td><%= vender_service_map.active %></td>
+        <td><%= link_to 'Show', vender_service_map %></td>
+        <td><%= link_to 'Edit', edit_vender_service_map_path(vender_service_map) %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Vender Service Map', new_vender_service_map_path %>

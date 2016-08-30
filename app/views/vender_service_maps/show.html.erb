@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vendor:</strong>
+  <%= @vender_service_map.vendor.name %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @vender_service_map.service.name %>
+</p>
+
+<p>
+  <strong>Vehicle:</strong>
+  <%= @vender_service_map.vehicle.model%>
+</p>
+
+<p>
+  <strong>Commission:</strong>
+  <%= @vender_service_map.commission %>
+</p>
+
+<p>
+  <strong>Is inclusive:</strong>
+  <%= @vender_service_map.is_inclusive %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @vender_service_map.active %>
+</p>
+
+<%= link_to 'Edit', edit_vender_service_map_path(@vender_service_map) %> |
+<%= link_to 'Back', vender_service_maps_path %>

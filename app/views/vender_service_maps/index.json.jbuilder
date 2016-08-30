@@ -1,0 +1,1 @@
+json.array! @vender_service_maps, partial: 'vender_service_maps/vender_service_map', as: :vender_service_map

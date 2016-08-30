@@ -1,0 +1,1 @@
+json.partial! "vende_contrct_maps/vende_contrct_map", vende_contrct_map: @vende_contrct_map

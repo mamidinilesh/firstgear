@@ -2,10 +2,12 @@ class VendorContractsController < ApplicationController
   def new
     @vendor_contract = VendorContract.new
     @vendors = Vendor.all
+    @categories=Category.all
   end
   def show
     @vendor_contract= VendorContract.find(params[:id])
       @vendors = Vendor.all
+      @categories=Category.all
   end
   def create
     @vendor_contract = VendorContract.new(vendor_contract_params)
@@ -35,10 +37,12 @@ class VendorContractsController < ApplicationController
   def edit
       @vendor_contract= VendorContract.find(params[:id])
         @vendors = Vendor.all
+        @categories=Category.all
   end
   def index
     @vendor_contracts=VendorContract.all
       @vendors= Vendor.all
+      @categories=Category.all
   end
 
 private

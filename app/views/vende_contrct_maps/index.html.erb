@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vende Contrct Maps</h1>
+
+<div style="height: 500px; overflow: auto" >
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Vendor contract</th>
+      <th>Category</th>
+      <th>Commission</th>
+      <th>Is inclusive</th>
+      <th>Active</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vende_contrct_maps.each do |vende_contrct_map| %>
+      <tr>
+        <td><%= vende_contrct_map.vendor_contract.id %></td>
+        <td><%= vende_contrct_map.category.name %></td>
+        <td><%= vende_contrct_map.commission %></td>
+        <td><%= vende_contrct_map.is_inclusive %></td>
+        <td><%= vende_contrct_map.active %></td>
+        <td><%= link_to 'Show', vende_contrct_map %></td>
+        <td><%= link_to 'Edit', edit_vende_contrct_map_path(vende_contrct_map) %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Vende Contrct Map', new_vende_contrct_map_path %>

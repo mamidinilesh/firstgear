@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829133324) do
+ActiveRecord::Schema.define(version: 20160829154204) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
@@ -87,6 +87,32 @@ ActiveRecord::Schema.define(version: 20160829133324) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["brand_id"], name: "index_vehicles_on_brand_id"
+  end
+
+  create_table "vende_contrct_maps", force: :cascade do |t|
+    t.integer  "vendor_contract_id"
+    t.integer  "category_id"
+    t.decimal  "commission"
+    t.boolean  "is_inclusive"
+    t.boolean  "active"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["category_id"], name: "index_vende_contrct_maps_on_category_id"
+    t.index ["vendor_contract_id"], name: "index_vende_contrct_maps_on_vendor_contract_id"
+  end
+
+  create_table "vender_service_maps", force: :cascade do |t|
+    t.integer  "vendor_id"
+    t.integer  "service_id"
+    t.integer  "vehicle_id"
+    t.decimal  "commission"
+    t.boolean  "is_inclusive"
+    t.boolean  "active"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["service_id"], name: "index_vender_service_maps_on_service_id"
+    t.index ["vehicle_id"], name: "index_vender_service_maps_on_vehicle_id"
+    t.index ["vendor_id"], name: "index_vender_service_maps_on_vendor_id"
   end
 
   create_table "vendor_contracts", force: :cascade do |t|

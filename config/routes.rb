@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
 
 
+  resources :vende_contrct_maps
+  resources :vender_service_maps
   # get 'vendor_contracts/_form'
   #
   # get 'vendor_contracts/edit'

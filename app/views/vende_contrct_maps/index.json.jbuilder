@@ -1,0 +1,1 @@
+json.array! @vende_contrct_maps, partial: 'vende_contrct_maps/vende_contrct_map', as: :vende_contrct_map

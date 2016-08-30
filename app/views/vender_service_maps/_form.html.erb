@@ -1,0 +1,100 @@
+<%= form_for(vender_service_map) do |f| %>
+<% if vender_service_map.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(vender_service_map.errors.count, "error") %> prohibited this vender_service_map from being saved:</h2>
+
+  <ul>
+    <% vender_service_map.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="form-horizontal">
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :vendor_id,class: "control-label col-sm-2" %>
+      <div class="col-sm-10">
+        <select name="vender_service_map[vendor_id]">
+          <%= @vendors.each do |vendor| %>
+          <option value="<%= vendor.id %>"><%= vendor.name %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :service_id ,class: "control-label col-sm-2" %>
+      <div class="col-sm-10">
+        <select name="vender_service_map[service_id]">
+          <%= @services.each do |service| %>
+          <option value="<%= service.id %>"><%= service.name %></option>
+          <% end %>
+        </select>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :vehicle_id ,class: "control-label col-sm-2"%>
+      <div class="col-sm-10">
+        <select name="vender_service_map[vehicle_id]">
+          <%= @vehicles.each do |vehicle| %>
+          <option value="<%= vehicle.id %>"><%= vehicle.model %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :commission ,class: "control-label col-sm-2"%>
+      <div class="col-sm-10">
+        <%= f.text_field :commission %>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :is_inclusive ,class: "control-label col-sm-2"%>
+      <div class="col-sm-1">
+        <%= f.check_box :is_inclusive %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :active ,class: "control-label col-sm-2"%>
+      <div class="col-sm-1">
+        <%= f.check_box :active %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class=" actions col-sm-offset-2 col-sm-10">
+      <%= f.submit %>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vendor contract:</strong>
+  <%= @vende_contrct_map.vendor_contract.id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @vende_contrct_map.category.name %>
+</p>
+
+<p>
+  <strong>Commission:</strong>
+  <%= @vende_contrct_map.commission %>
+</p>
+
+<p>
+  <strong>Is inclusive:</strong>
+  <%= @vende_contrct_map.is_inclusive %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @vende_contrct_map.active %>
+</p>
+
+<%= link_to 'Edit', edit_vende_contrct_map_path(@vende_contrct_map) %> |
+<%= link_to 'Back', vende_contrct_maps_path %>
