@@ -7,7 +7,6 @@ class CreateRateCards < ActiveRecord::Migration[5.0]
       t.decimal :rate
       t.boolean :is_inclusive
       t.boolean :active
-
       t.timestamps
     end
   end
