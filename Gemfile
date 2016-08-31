@@ -19,6 +19,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'therubyracer', platforms: :ruby
 gem 'execjs'
 gem 'unicorn'
+gem 'mysql'
 
 # Date picker
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
