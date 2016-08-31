@@ -15,8 +15,4 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
-
-$(document).on('ready page:load', function () {
-  // Actions to do
-    $(".datepicker").datepicker();
-});
+//= require bootstrap-datepicker
