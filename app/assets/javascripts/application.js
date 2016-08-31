@@ -20,5 +20,15 @@
 
 $(document).on('ready page:load', function () {
   // Actions to do
-  $('.datepicker').datepicker();
+//  $('.datepicker').datepicker();
+//  $('#start_date_select').datepicker();
+//  $('#end_date_select').datepicker();
+$('#start_date_select').datepicker({dateFormat: 'yy-mm-dd'});
+$('#end_date_select').datepicker({dateFormat: 'yy-mm-dd'});
+// onSelect: function () {
+//   $('#start_date_select').text(this.value);
+//   $('#end_date_select').text(this.value);
+// }
+
+
 });

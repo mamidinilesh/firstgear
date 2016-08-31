@@ -30,7 +30,7 @@
   <div class="field">
     <%= f.label "Start date" ,class: "control-label col-sm-2" %>
     <div class="col-sm-10">
-      <%= f.text_field :start_date, 'data-provide' => 'datepicker' , class: "datepicker" , :required => true %>
+      <%= f.text_field :start_date, 'data-provide' => 'datepicker' , id: "start_date_select" , :required => true %>
     </div>
   </div>
 </div>
@@ -41,7 +41,7 @@
   <div class="field">
     <%= f.label "End Date" ,class: "control-label col-sm-2" %>
     <div class="col-sm-10">
-      <%= f.text_field :end_date, 'data-provide' => 'datepicker', class: "datepicker" , :required => true %>
+      <%= f.text_field :end_date, 'data-provide' => 'datepicker', id: "end_date_select" , :required => true %>
     </div>
   </div>
 </div>
