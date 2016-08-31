@@ -23,8 +23,8 @@ $(document).on('ready page:load', function () {
 //  $('.datepicker').datepicker();
 //  $('#start_date_select').datepicker();
 //  $('#end_date_select').datepicker();
-$('#start_date_select').datepicker({dateFormat: 'yy-mm-dd'});
-$('#end_date_select').datepicker({dateFormat: 'yy-mm-dd'});
+$('#vendor_contract_start_date').datepicker({dateFormat: 'yyyy-mm-dd'});
+$('#vendor_contract_end_date').datepicker({dateFormat: 'yyyy-mm-dd'});
 // onSelect: function () {
 //   $('#start_date_select').text(this.value);
 //   $('#end_date_select').text(this.value);
