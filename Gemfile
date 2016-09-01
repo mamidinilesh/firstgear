@@ -18,8 +18,6 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 gem 'execjs'
-gem 'unicorn'
-gem 'mysql'
 
 # Date picker
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
@@ -38,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 #gem 'sqlite3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'unicorn'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,8 +54,7 @@ group :development do
 end
 group :production do
   gem 'pg', '0.18.4'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+
 end
 group :test do
   gem 'rails-controller-testing', '0.1.1'
