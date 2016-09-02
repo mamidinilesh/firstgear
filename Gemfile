@@ -53,8 +53,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 group :production do
-  #gem 'pg', '0.18.4'
-  gem 'mysql2'
+  gem 'pg', '0.18.4'
+  #gem 'mysql2'
 
 end
 group :test do
