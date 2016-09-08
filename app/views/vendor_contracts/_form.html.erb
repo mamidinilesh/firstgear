@@ -1,4 +1,3 @@
-
 <%= form_for(vendor_contract) do |f| %>
 <% if vendor_contract.errors.any? %>
 <div id="error_explanation">
@@ -71,6 +70,39 @@
     </div>
   </div>
 </div>
+
+
+
+<%= f.fields_for :vende_contrct_maps do |vende_contrct_map| %>
+
+<div class="form-group">
+  <div class="field">
+    <%= vende_contrct_map.label :category_id ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= vende_contrct_map.select(:category_id, @categories, {} , {:multiple => true, :class => "chzn-select", :style => "width:450px;" }) %>
+
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= vende_contrct_map.label :commission ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= vende_contrct_map.text_field :commission  , :required => true %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="field">
+    <%= vende_contrct_map.label :is_inclusive ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= vende_contrct_map.check_box :is_inclusive %>
+    </div>
+  </div>
+</div>
+
+<% end %>
 
 
 

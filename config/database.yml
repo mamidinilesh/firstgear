@@ -21,5 +21,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.pg
+  adapter: postgresql
+  host: localhost
+  username: lmn
+  password: firstgear
+  database: firstgear
+
+#  database: db/postgres.pg
+#  encoding: utf8

@@ -1,6 +1,132 @@
 <h1 class="center">Update  Contract</h1>
 
-<%= render 'form', vendor_contract: @vendor_contract %>
+<%= form_for :vendor_contract  , action: "update", url: vendor_contract_path(@vendor_contract) , method: :patch do |f| %>
+<% if @vendor_contract.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@vendor_contract.errors.count, "error") %> prohibited this region from being saved:</h2>
+
+  <ul>
+    <% vendor_contract.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label "Vendor Name" ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= f.select(:vendor_id, @vendors , :required => true ) %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label "Start date" ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= f.date_select :start_date, :required => true %>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label "End Date" ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= f.date_select :end_date , :required => true %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label "Comment" ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= f.text_field :comments %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label "Listing Fees" ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= f.text_field :listing_fees , :required => true%>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label "Amount Paid" ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= f.text_field :listing_fees_paid , :required => true %>
+    </div>
+  </div>
+</div>
+
+
+<%= f.fields_for :vende_contrct_map do |vende_contrct_map| %>
+
+<div class="form-group">
+  <div class="field">
+    <%= vende_contrct_map.label :category_id ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= vende_contrct_map.select :category_id, options_for_select(@categories, @ids) , {} , {:multiple => true, :class => "chzn-select", :style => "width:450px;" } %>
+
+
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= vende_contrct_map.label :commission ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= vende_contrct_map.text_field :commission , value: @vende_contrct_map.commission  , :required => true %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="field">
+    <%= vende_contrct_map.label :is_inclusive ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+
+      <%= vende_contrct_map.check_box :is_inclusive , checked: @vende_contrct_map.is_inclusive %>
+    </div>
+  </div>
+</div>
+
+<% end %>
+
+
+
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label :active ,class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= f.check_box :active %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class=" actions col-sm-offset-2 col-sm-10">
+    <%= f.submit   %>
+  </div>
+</div>
+<% end %>
+<div>
+
 <div>
   <%= link_to 'All Contracts', vendor_contracts_path%>
 </div>

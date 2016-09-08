@@ -28,7 +28,7 @@ class VendeContrctMapsController < ApplicationController
       @categories=Category.all.map{ |category| [ category.name, category.id ] }
   end
 
-  
+
 
   # POST /vende_contrct_maps
   # POST /vende_contrct_maps.json
@@ -78,6 +78,6 @@ class VendeContrctMapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vende_contrct_map_params
-      params.require(:vende_contrct_map).permit(:vendor_contract_id, :category_id, :commission, :is_inclusive, :active)
+      params.require(:vende_contrct_map).permit(:id ,:vendor_contract_id, :category_id, :commission, :is_inclusive, :active)
     end
 end

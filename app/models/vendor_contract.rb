@@ -1,4 +1,7 @@
 class VendorContract < ApplicationRecord
   belongs_to :vendor
-  #belongs_to :contract_type
+  has_many :vende_contrct_maps
+
+
+
 end
