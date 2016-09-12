@@ -108,6 +108,24 @@ class VendorContractsController < ApplicationController
     @vendor_contracts=VendorContract.all
   end
 
+  def index2
+    params
+    vendor_id = params[:vendor_id].to_i
+    @vendor_contracts = VendorContract.all
+    #debugger
+    @vendor_contracts_to_send=Array.new
+    @vendor_contracts.each do |vc|
+    #  debugger
+      if vc.vendor_id == vendor_id
+      #  @vendors_to_send.push(vim)
+          @vendor_contracts_to_send << { :id => vc.id, :name => vc.vendor.name, :start_date =>vc.start_date, :end_date =>vc.end_date,
+                                :comments => vc.comments, :listing_fees => vc.listing_fees, :listing_fees_paid => vc.listing_fees_paid,
+                                :active => vc.active}
+      end
+    end
+    render json: @vendor_contracts_to_send
+  end
+
   private
   def vendor_contract_params
     params.require(:vendor_contract).permit(:vendor_id , :start_date, :end_date, :comments ,:listing_fees ,

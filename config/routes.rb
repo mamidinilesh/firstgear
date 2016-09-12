@@ -6,8 +6,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :vende_contrct_maps
-  resources :vender_service_maps
+
   # get 'vendor_contracts/_form'
   #
   # get 'vendor_contracts/edit'
@@ -138,30 +137,56 @@ Rails.application.routes.draw do
   #
   # get 'services/show'
 
-resources :vehicles
- resources :brands
- resources :categories
- resources :services
- resources :states
- resources :cities
- resources :regions
- resources :vendors
- resources :vendor_contracts
- resources :vendor_types
- resources :rate_cards
+  resources :vehicles
+  resources :brands
+  resources :categories
+  resources :services
+  resources :states
+  resources :cities
+  resources :regions
+  resources :vendors do
+    collection do
+      get "index2" , to:'vendors#index2'
+    end
+  end
+
+  resources :vendor_contracts do
+    collection do
+      get "index2" , to:'vendor_contracts#index2'
+    end
+  end
+  resources :vendor_types
+  resources :rate_cards do
+    collection do
+      get "index2" , to:'rate_cards#index2'
+    end
+  end
+  resources :vende_contrct_maps do
+    collection do
+      get "index2" , to:'vende_contrct_maps#index2'
+    end
+  end
+  resources :vender_service_maps do
+    collection do
+      get "index2" , to:'vender_service_maps#index2'
+    end
+  end
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-#  root 'application#hello'
+  #  root 'application#hello'
   root 'static_pages#home'
   #  root '/layouts',layouts#application'
-#  get '/brand',  to: 'brands#new'
-    get  '/brand',  to: 'brand#new'
-    get '/vehicle', to:'vehicle#new'
-    get '/category', to:'category#new'
-    get '/service', to:'service#new'
-    get '/state', to:'state#new'
-    get '/city', to:'city#new'
-    get '/region', to:'region#new'
+  #  get '/brand',  to: 'brands#new'
+  get  '/brand',  to: 'brand#new'
+  get '/vehicle', to:'vehicle#new'
+  get '/category', to:'category#new'
+  get '/service', to:'service#new'
+  get '/state', to:'state#new'
+  get '/city', to:'city#new'
+  get '/region', to:'region#new'
+
+
+  post "dynamiccitiess/:id" => "vendorform#dynamiccities"
 
 end

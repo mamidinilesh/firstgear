@@ -43,6 +43,26 @@ class RateCardsController < ApplicationController
       @rate_cards= RateCard.all
     end
 
+    def index2
+      params
+      vendor_id = params[:vendor_id].to_i
+
+      @rate_cards= RateCard.all
+      #debugger
+
+      @rate_cards_to_send=Array.new
+      @rate_cards.each do |rc|
+      #  debugger
+
+        if rc.vendor_id == vendor_id
+        #  @vendors_to_send.push(vim)
+            @rate_cards_to_send << { :id => rc.id, :name => rc.vendor.name, :vehicle =>rc.vehicle.model, :service =>rc.service.name,
+                                  :rate => rc.rate, :active => rc.active}
+        end
+      end
+      render json: @rate_cards_to_send
+    end
+
     private
     def rate_card_params
       params.require(:rate_card).permit(:vendor_id, :vehicle_id , :service_id, :rate , :active)

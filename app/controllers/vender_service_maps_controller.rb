@@ -6,6 +6,25 @@ class VenderServiceMapsController < ApplicationController
   def index
     @vender_service_maps = VenderServiceMap.all
   end
+  def index2
+
+    vendor_id = params[:vendor_id].to_i
+
+    @vender_service_maps = VenderServiceMap.all
+    #debugger
+
+    @vender_service_maps_to_send=Array.new
+    @vender_service_maps.each do |vsm|
+    #  debugger
+
+      if vsm.vendor_id == vendor_id
+      #  @vendors_to_send.push(vim)
+          @vender_service_maps_to_send << {:name => vsm.vendor.name, :service =>vsm.service.name, :vehicle =>vsm.vehicle.model,
+                                :commission => vsm.commission, :is_inclusive => vsm.is_inclusive, :active => vsm.active}
+      end
+    end
+    render json: @vender_service_maps_to_send
+  end
 
   # GET /vender_service_maps/1
   # GET /vender_service_maps/1.json

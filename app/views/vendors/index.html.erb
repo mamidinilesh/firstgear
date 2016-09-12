@@ -1,48 +1,70 @@
 <h1 class="center">Vendors</h1>
-<div style="height: 500px; overflow: auto" >
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th>Vendor id</th>
-      <th>Vendor Name</th>
-      <th>Address1</th>
-      <th>Address2</th>
-      <th>Region</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Ranking</th>
-      <th>Vendor Type</th>
-      <th>Contact Name</th>
-      <th>Contact Number</th>
-      <th>Contact Email</th>
-      <th>Listing Category</th>
+<div class="form-horizontal center container">
 
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @vendors.each do |vendor|%>
-    <tr>
-      <td> <%=vendor.id %></td>
-      <td> <%=vendor.name %></td>
-      <td> <%=vendor.address1 %></td>
-      <td> <%=vendor.address2 %></td>
-      <td> <%= vendor.region.name %></td>
-      <td> <%= vendor.city.name %></td>
-      <td> <%= vendor.state.name %></td>
-      <td> <%=vendor.ranking %></td>
-      <td> <%= vendor.vendor_type.vendor_type %></td>
-      <td> <%=vendor.contact_name_1 %></td>
-      <td> <%=vendor.contact_mob_1 %></td>
-      <td> <%=vendor.contact_email_1 %></td>
-      <td> <%=vendor.listing_category %></td>
+  <div class="form-group ">
+    <label class="col-sm-2" >Select State :</label>
+    <%= collection_select :vendor , :state_id, State.order(:name), :id, :name, {:include_blank => false},{  prompt: "Select a city" , class: "col-sm-10"} %>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2" >Select City :</label>
+    <%= grouped_collection_select :vendor ,:city_id, State.order(:name), :cities ,:name, :id, :name,  {:include_blank => false}, { prompt: "Select a city" , class: "col-sm-10"} %>
+  </div>
+
+  <div class="form-group ">
+    <label class="col-sm-2" >Select Region :</label>
+    <%= grouped_collection_select :vendor, :region_id, City.order(:name), :regions ,:name, :id, :name,{:include_blank => false}, {  prompt: "Select a region" , class: "col-sm-10" } %>
+  </div>
+
+  <div class="form-group center">
+    <input type="button" id ="vendor_index_filter_button" class="btn btn-md btn-primary center" value="Submit">
+  </div>
+
+</div>
+
+<div style="height: 400px; overflow: auto" >
+  <table id= "vendor_index_table" class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Vendor id</th>
+        <th>Vendor Name</th>
+        <th>Address1</th>
+        <th>Address2</th>
+        <th>Region</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Ranking</th>
+        <th>Vendor Type</th>
+        <th>Contact Name</th>
+        <th>Contact Number</th>
+        <th>Contact Email</th>
+        <th>Listing Category</th>
+
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vendors.each do |vendor|%>
+      <tr>
+        <td> <%=vendor.id %></td>
+        <td> <%=vendor.name %></td>
+        <td> <%=vendor.address1 %></td>
+        <td> <%=vendor.address2 %></td>
+        <td> <%= vendor.region.name %></td>
+        <td> <%= vendor.city.name %></td>
+        <td> <%= vendor.state.name %></td>
+        <td> <%=vendor.ranking %></td>
+        <td> <%= vendor.vendor_type.vendor_type %></td>
+        <td> <%=vendor.contact_name_1 %></td>
+        <td> <%=vendor.contact_mob_1 %></td>
+        <td> <%=vendor.contact_email_1 %></td>
+        <td> <%=vendor.listing_category %></td>
         <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
         <td><%= link_to 'Show', vendor %></td>
-
       </tr>
       <% end %>
 
-  </tbody>
-</table>
+    </tbody>
+  </table>
 </div>
 <%= link_to 'New Vendor', new_vendor_path, class: "btn btn-md btn-primary"%>

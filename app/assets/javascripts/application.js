@@ -11,14 +11,21 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require bootstrap
 //= require bootstrap-datepicker
 
+//= require vendor
+//= require rate_cards
 
-$(document).on('ready page:load', function () {
+
+
+
+
+
+$(document).ready( function () {
   // Actions to do
 //  $('.datepicker').datepicker();
 //  $('#start_date_select').datepicker();

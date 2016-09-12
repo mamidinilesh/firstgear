@@ -39,25 +39,26 @@
 
   <div class="form-group">
     <div class="field">
-      <%= f.label "State" ,class: "control-label col-sm-2" %>
+      <%= f.label :state_id , class: "control-label col-sm-2" %>
       <div class="col-sm-10">
-         <%= f.select(:state_id, @states) %>
+            <%= f.collection_select :state_id, State.order(:name), :id, :name,{}, include_blank: true %>
       </div>
     </div>
   </div>
   <div class="form-group">
     <div class="field">
-      <%= f.label "City" ,class: "control-label col-sm-2" %>
+      <%= f.label :city_id ,class: "control-label col-sm-2" %>
       <div class="col-sm-10">
- <%= f.select(:city_id, @cities) %>
-      </div>
+        <%= f.grouped_collection_select :city_id, State.order(:name), :cities ,:name, :id, :name, include_blank: true %>
+</div>
     </div>
   </div>
   <div class="form-group">
     <div class="field">
       <%= f.label "Region" ,class: "control-label col-sm-2" %>
       <div class="col-sm-10">
-       <%= f.select(:region_id, @regions) %>
+
+       <%= f.grouped_collection_select :region_id, City.order(:name), :regions ,:name, :id, :name, include_blank: true %>
       </div>
     </div>
   </div>

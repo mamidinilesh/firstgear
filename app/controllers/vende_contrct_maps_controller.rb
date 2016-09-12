@@ -7,6 +7,25 @@ class VendeContrctMapsController < ApplicationController
     @vende_contrct_maps = VendeContrctMap.all
 
   end
+  def index2
+
+    vendor_id = params[:vendor_id].to_i
+
+  @vende_contrct_maps = VendeContrctMap.all
+    #debugger
+
+    @vende_contrct_maps_to_send=Array.new
+    @vende_contrct_maps.each do |vcm|
+    #  debugger
+
+      if vcm.vendor_contract.vendor.id == vendor_id
+      #  @vendors_to_send.push(vim)
+          @vende_contrct_maps_to_send << {id: vcm.id, :name => vcm.vendor_contract.vendor.name, :category =>vcm.category.name,
+                                :commission => vcm.commission, :is_inclusive => vcm.is_inclusive, :active => vcm.active}
+      end
+    end
+    render json: @vende_contrct_maps_to_send
+  end
 
   # GET /vende_contrct_maps/1
   # GET /vende_contrct_maps/1.json
